@@ -24,17 +24,19 @@ namespace Selenium
         [FindsBy(How = SeleniumExtras.PageObjects.How.Name, Using = "Password")]
         public IWebElement txtPassword { get; set; }
 
-        [FindsBy(How = SeleniumExtras.PageObjects.How.Name, Using = "Login")]
+        [FindsBy(How = SeleniumExtras.PageObjects.How.XPath, Using = "//*[@id=\"userName\"]/p[3]/input")]
         public IWebElement btnLogin { get; set; }
+        //[FindsBy(How = SeleniumExtras.PageObjects.How.Name, Using = "Login")]
+        //public IWebElement btnLogin { get; set; }
 
         public EAPageObject Login(string userName, string password)
         {
             //Login
-            txtUserName.SendKeys(userName);
+            txtUserName.EnterText(userName);
             //senha
-            txtPassword.SendKeys(password);
+            txtPassword.EnterText(password);
             //Clicar no botão
-            btnLogin.Submit();
+            btnLogin.Clicks();
             //Return the page object
             return new EAPageObject();
         }

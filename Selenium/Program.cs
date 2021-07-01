@@ -25,14 +25,14 @@ namespace Selenium
         public void ExecuteTest()
         {
 
+            //ExcelLib.PopulateInCollection(@"C:\Data.xlsx");
 
             //Login na aplication
             LoginPageObject pageLogin = new LoginPageObject();
-            EAPageObject pageEA = pageLogin.Login("EthanW", "winters");
+            EAPageObject pageEA = pageLogin.Login("sadasd","UserName");
 
 
-            pageEA.FillUserForm("EW", "Ethan", "Winters");
-
+            pageEA.FillUserForm("sd", "d", "das");
 
 
            /* //Título
@@ -53,7 +53,7 @@ namespace Selenium
         public void CleanUp()
         {
             //Fechar o navegador
-            PropertiesCollection.driver.Close();
+            //PropertiesCollection.driver.Close();
 
             Console.WriteLine("Fechou o navegador");
 

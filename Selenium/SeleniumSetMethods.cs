@@ -9,23 +9,34 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Selenium
 {
-    class SeleniumSetMethods
+    public static class SeleniumSetMethods
     {
-        //Enter Text
-        public static void EnterText(IWebElement element, string value)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="value"></param>
+        public static void EnterText(this IWebElement element, string value)
         {
             element.SendKeys(value);
         }
 
-        //Clickar em uns botões
+        /// <summary>
+        /// Click into a button, Checkbox, option etc
+        /// </summary>
+        /// <param name="element"></param>
 
-        public static void Click(IWebElement element)
+        public static void Clicks(this IWebElement element)
         {
             element.Click();
         }
 
-        //Selecionar um dropdown
-        public static void SelectDropdown(IWebElement element, string value)
+        /// <summary>
+        /// Selecting a drop down control
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="value"></param>
+        public static void SelectDropdown(this IWebElement element, string value)
         {
             new SelectElement(element).SelectByText(value);
         }
